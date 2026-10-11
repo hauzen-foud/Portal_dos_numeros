@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Um quiz divertido de Matemática para estudantes do 6º ano do Ensino Fundamental.">
+  <title>Portal dos Números | Matemática do 6º ano</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-glow glow-one" aria-hidden="true"></div>
+  <div class="page-glow glow-two" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Portal dos Números - início">
+      <span class="brand-icon" aria-hidden="true">✦</span>
+      <span>portal <span class="brand-highlight">dos números</span></span>
+    </a>
+    <span class="grade-pill">🎒 6º ano</span>
+  </header>
+
+  <main class="app-shell">
+    <section id="start-screen" class="screen start-screen" aria-labelledby="main-title">
+      <div class="hero-art" aria-hidden="true">
+        <span class="floating-symbol symbol-plus">＋</span>
+        <span class="floating-symbol symbol-pi">π</span>
+        <span class="floating-symbol symbol-star">✦</span>
+        <div class="mascot">🧠</div>
+        <span class="floating-symbol symbol-equals">＝</span>
+        <span class="floating-symbol symbol-divide">÷</span>
+      </div>
+
+      <p class="eyebrow"><span class="eyebrow-dot"></span> DESAFIO DO DIA</p>
+      <h1 id="main-title">Sua próxima<br><span>grande ideia</span> começa aqui!</h1>
+      <p class="intro-copy">Prepare a mente, responda aos desafios e descubra quantos pontos você consegue fazer nessa aventura matemática.</p>
+
+      <div class="mission-info" aria-label="Informações do jogo">
+        <div class="info-item"><span class="info-icon purple">✎</span><span><strong>10 desafios</strong><small>Uma pergunta por vez</small></span></div>
+        <div class="info-item"><span class="info-icon yellow">⚡</span><span><strong>Até 1.000 pontos</strong><small>Acertou? Pontuou!</small></span></div>
+        <div class="info-item"><span class="info-icon pink">♥</span><span><strong>3 vidas</strong><small>Use com sabedoria</small></span></div>
+      </div>
+
+      <button id="start-button" class="button button-primary start-button" type="button">Começar missão <span aria-hidden="true">→</span></button>
+      <p class="tiny-note">Sem pressa: leia a pergunta e escolha a melhor resposta. 💡</p>
+    </section>
+
+    <section id="quiz-screen" class="screen quiz-screen" aria-labelledby="question-title" hidden>
+      <div class="quiz-topline">
+        <button id="quit-button" class="text-button" type="button" aria-label="Voltar ao início">← Sair</button>
+        <div class="score-chip"><span aria-hidden="true">⭐</span> <span id="score-value">0</span><span class="score-label">pontos</span></div>
+        <div id="lives" class="lives" aria-label="3 vidas restantes"><span>♥</span><span>♥</span><span>♥</span></div>
+      </div>
+
+      <div class="progress-block">
+        <div class="progress-labels"><span id="question-count">DESAFIO 01 / 10</span><span id="progress-percent">10%</span></div>
+        <div class="progress-track" role="progressbar" aria-label="Progresso da missão" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" id="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+      </div>
+
+      <div class="question-card">
+        <div class="question-meta"><span id="topic-badge" class="topic-badge">🔢 OPERAÇÕES</span><span class="question-spark" aria-hidden="true">✦</span></div>
+        <h2 id="question-title">Quanto é 8 × 7?</h2>
+        <p id="question-hint" class="question-hint">Escolha uma alternativa abaixo.</p>
+        <div id="answers" class="answers" aria-label="Alternativas de resposta"></div>
+        <div id="feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+        <div class="question-actions"><span class="keyboard-tip">Dica: você consegue! ✨</span><button id="next-button" class="button button-primary next-button" type="button" hidden>Continuar <span aria-hidden="true">→</span></button></div>
+      </div>
+      <p class="bottom-encouragement">Cada tentativa é uma chance de aprender. 🌱</p>
+    </section>
+
+    <section id="result-screen" class="screen result-screen" aria-labelledby="result-title" hidden>
+      <div id="result-emoji" class="result-emoji" aria-hidden="true">🏆</div>
+      <p class="eyebrow"><span class="eyebrow-dot"></span> MISSÃO CONCLUÍDA</p>
+      <h1 id="result-title">Mandou muito bem!</h1>
+      <p id="result-message" class="intro-copy">Você chegou ao final do desafio!</p>
+
+      <div class="final-score-card">
+        <span class="final-score-label">SUA PONTUAÇÃO</span>
+        <div class="final-score"><span id="final-score">0</span><small> / 1.000</small></div>
+        <div class="result-stats">
+          <div><strong id="correct-count">0</strong><span>Acertos</span></div>
+          <div><strong id="accuracy-value">0%</strong><span>Precisão</span></div>
+          <div><strong id="lives-left">0</strong><span>Vidas restantes</span></div>
+        </div>
+      </div>
+
+      <p id="best-score-line" class="best-score-line">🏅 Seu melhor resultado: 0 pontos</p>
+      <button id="restart-button" class="button button-primary start-button" type="button">Jogar novamente <span aria-hidden="true">↻</span></button>
+      <button id="home-button" class="button button-secondary" type="button">Voltar ao início</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Feito para aprender brincando</span><span class="footer-star" aria-hidden="true">✦</span><span>Matemática • 6º ano</span>
+  </footer>
+</body>
+</html>
